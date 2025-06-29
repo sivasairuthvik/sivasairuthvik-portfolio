@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Twitter, Download, Mail, User, Code, ExternalLink, ChevronDown } from 'lucide-react';
 
@@ -84,7 +83,6 @@ const Index = () => {
       description: "Full-stack application with machine learning capabilities for intelligent task prioritization and scheduling.",
       tech: ["React", "Node.js", "Python", "TensorFlow", "MongoDB"],
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop",
-      github: "https://github.com",
       demo: "https://demo.com"
     },
     {
@@ -92,7 +90,6 @@ const Index = () => {
       description: "WebSocket-based platform enabling real-time document editing and team collaboration with advanced features.",
       tech: ["Vue.js", "Socket.io", "Express", "Redis", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=250&fit=crop",
-      github: "https://github.com",
       demo: "https://demo.com"
     },
     {
@@ -100,7 +97,6 @@ const Index = () => {
       description: "Comprehensive dashboard for cryptocurrency and DeFi analytics with real-time data visualization.",
       tech: ["Angular", "D3.js", "FastAPI", "Web3.js", "Docker"],
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop",
-      github: "https://github.com",
       demo: "https://demo.com"
     },
     {
@@ -108,7 +104,6 @@ const Index = () => {
       description: "DevOps tool for managing multi-cloud infrastructure with automated deployment and monitoring.",
       tech: ["React", "Kubernetes", "Terraform", "AWS", "Go"],
       image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&h=250&fit=crop",
-      github: "https://github.com",
       demo: "https://demo.com"
     }
   ];
@@ -234,9 +229,6 @@ const Index = () => {
                   />
                   <div className="project-overlay">
                     <div className="flex gap-4">
-                      <a href={project.github} className="project-link">
-                        <Github size={20} />
-                      </a>
                       <a href={project.demo} className="project-link">
                         <ExternalLink size={20} />
                       </a>
