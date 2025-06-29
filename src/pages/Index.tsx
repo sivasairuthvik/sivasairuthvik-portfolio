@@ -127,15 +127,11 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="avatar-container mb-8">
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1 animate-pulse-glow">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                <User size={48} className="text-cyan-400" />
-              </div>
+              
             </div>
           </div>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in md:text-7xl">vgvSiva Sai Ruthvik Goli</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-delay">
-            Crafting digital experiences with cutting-edge technology
-          </p>
+          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in md:text-7xl">Siva Sai Ruthvik Goli</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-delay">Crafting Code with a Creative Soul</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button onClick={() => scrollToSection('projects')} className="cyber-button primary">
               View My Work
