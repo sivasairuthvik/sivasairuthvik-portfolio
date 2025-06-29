@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Twitter, Download, Mail, User, Code, ExternalLink, Calendar, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Twitter, Download, Mail, User, Code, ExternalLink, ChevronDown } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -25,7 +26,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'blog', 'contact'];
+      const sections = ['home', 'about', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -112,27 +113,6 @@ const Index = () => {
     }
   ];
 
-  const blogPosts = [
-    {
-      title: "The Future of Web Development: WebAssembly and Beyond",
-      date: "December 15, 2024",
-      excerpt: "Exploring how WebAssembly is revolutionizing web performance and opening new possibilities for complex applications in the browser.",
-      readTime: "8 min read"
-    },
-    {
-      title: "Building Scalable Microservices with Event-Driven Architecture",
-      date: "November 28, 2024",
-      excerpt: "A deep dive into implementing robust microservices using event-driven patterns and modern cloud technologies.",
-      readTime: "12 min read"
-    },
-    {
-      title: "AI Integration in Modern Web Applications",
-      date: "November 10, 2024",
-      excerpt: "Practical approaches to integrating machine learning models into web applications for enhanced user experiences.",
-      readTime: "10 min read"
-    }
-  ];
-
   const skills = [
     "JavaScript/TypeScript", "React/Vue/Angular", "Node.js/Express", 
     "Python/Django", "Database Design", "Cloud Architecture",
@@ -149,7 +129,7 @@ const Index = () => {
               Portfolio
             </div>
             <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'projects', 'blog', 'contact'].map((section) => (
+              {['home', 'about', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -273,29 +253,6 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section id="blog" className="py-20 relative">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title">Latest Insights</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <article key={index} className="blog-card glass-card p-6 hover:transform hover:scale-105 transition-all">
-                <div className="flex items-center gap-2 text-cyan-400 mb-4">
-                  <Calendar size={16} />
-                  <span className="text-sm">{post.date}</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-sm text-gray-400">{post.readTime}</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3 hover:text-cyan-400 transition-colors cursor-pointer">
-                  {post.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">{post.excerpt}</p>
-              </article>
             ))}
           </div>
         </div>
