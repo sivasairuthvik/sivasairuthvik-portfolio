@@ -179,7 +179,7 @@ const Index = () => {
           <div className="avatar-container mb-8">
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1 animate-pulse-glow flex items-center justify-center overflow-hidden">
               <img
-                src="/public/placeholder.svg"
+                src="/placeholder.svg"
                 alt="Siva Sai Ruthvik Goli"
                 className="w-30 h-30 rounded-full object-cover"
               />
