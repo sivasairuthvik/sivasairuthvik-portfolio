@@ -137,9 +137,19 @@ const Index = () => {
   ];
   const experienceCards = [
     {
-      title: "Core Organizer, Mahotsav 2026 — Deputy Secretary (Technical Design)",
+      title: "Core Organizer, Mahotsav 2026 ",
       org: "Vignan's Foundation for Science, Technology & Research",
       date: "May 2025 – Present",
+      bullets: [
+        "Led a 5‑member team to design 50+ posters and web creatives for Mahotsav 2026, boosting engagement by 30%.",
+        "Developed responsive web apps using React.js and Spring Boot, reducing load time by 20%.",
+        "Enhanced UI/UX features in collaboration with event coordinators, increasing satisfaction by 15%."
+      ]
+    },
+    {
+      title: "Deputy Secretary, Student Activity Council",
+      org: "Vignan's Foundation for Science, Technology & Research",
+      date: "June 2024 – May 2025",
       bullets: [
         "Led a 5‑member team to design 50+ posters and web creatives for Mahotsav 2026, boosting engagement by 30%.",
         "Developed responsive web apps using React.js and Spring Boot, reducing load time by 20%.",
@@ -157,196 +167,219 @@ const Index = () => {
       ]
     }
   ];
-  return <div className="portfolio-container">
+  return (
+    <div className="portfolio-container">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-nav backdrop-blur-md bg-black/20 border-b border-cyan-500/20">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Siva Sai Ruthvik Goli</div>
-            <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'projects', 'contact'].map(section => <button key={section} onClick={() => scrollToSection(section)} className={`nav-link ${activeSection === section ? 'active' : ''} capitalize transition-colors hover:text-cyan-400`}>
-                  {section}
-                </button>)}
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="hero-section min-h-screen flex items-center justify-center relative overflow-hidden" data-aos="fade-up">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="avatar-container mb-8">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1 animate-pulse-glow flex items-center justify-center overflow-hidden">
-              <img
-                src="/placeholder.svg"
-                alt="Siva Sai Ruthvik Goli"
-                className="w-30 h-30 rounded-full object-cover"
-              />
-            </div>
-          </div>
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in md:text-7xl" data-aos="fade-up">Siva Sai Ruthvik Goli</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-2 animate-fade-in-delay" data-aos="fade-up" data-aos-delay="100">Full Stack Developer</p>
-          <p className="text-lg text-gray-400 mb-2 animate-fade-in-delay" data-aos="fade-up" data-aos-delay="200">Guntur, Andhra Pradesh, India</p>
-          <p className="text-base text-gray-400 mb-8 animate-fade-in-delay" data-aos="fade-up" data-aos-delay="300">Aspiring Full Stack Developer with strong proficiency in React.js, Spring Boot, and SQL. Proven ability to design secure, scalable web applications and develop REST APIs. Experienced in UI/UX design, real‑time systems, and agile development environments. Seeking a paid internship to apply and expand technical skills in a fast‑paced, collaborative setting.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button onClick={() => scrollToSection('projects')} className="cyber-button primary">
-              View My Work
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="cyber-button secondary flex items-center gap-2">
-              <Mail size={20} />
-              Contact
-            </button>
-          </div>
-          <div className="animate-bounce">
-            <ChevronDown size={32} className="text-cyan-400 cursor-pointer mx-auto" onClick={() => scrollToSection('about')} />
-          </div>
-        </div>
-        <div className="floating-particles">
-          {[...Array(20)].map((_, i) => <div key={i} className={`particle particle-${i + 1}`}></div>)}
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 relative" data-aos="fade-up">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title" data-aos="fade-right">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-6" data-aos="fade-left">Professional Summary</h3>
-              <p className="text-gray-300 leading-relaxed mb-6" data-aos="fade-up">
-                Aspiring Full Stack Developer with strong proficiency in React.js, Spring Boot, and SQL. Proven ability to design secure, scalable web applications and develop REST APIs. Experienced in UI/UX design, real‑time systems, and agile development environments. Seeking a paid internship to apply and expand technical skills in a fast‑paced, collaborative setting.
-              </p>
-              <h3 className="text-2xl font-bold text-cyan-400 mb-6 mt-8" data-aos="fade-left">Education</h3>
-              <ul className="text-gray-300 leading-relaxed list-disc ml-6">
-                <li data-aos="fade-up" data-aos-delay="100"><b>B.Tech, Computer Science & Engineering</b><br/>Vignan's University, Guntur, Andhra Pradesh<br/>2023 – 2027</li>
-                <li className="mt-2" data-aos="fade-up" data-aos-delay="200"><b>Pre‑University Course (MPC)</b><br/>RGUKT – IIIT Srikakulam, Andhra Pradesh<br/>2021 – 2023</li>
-                <li className="mt-2" data-aos="fade-up" data-aos-delay="300"><b>Secondary School Certificate</b><br/>Santhinikethan School, Ananthasagaram<br/>2020 – 2021</li>
-              </ul>
-            </div>
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-6" data-aos="fade-right">Core Skills</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {skills.map((skill, i) => (
-                  <div key={skill} className="skill-tag" data-aos="zoom-in" data-aos-delay={i * 50}>
-                    {skillIcons[skill] || <Zap className="text-purple-400" size={16} />}
-                    <span>{skill}</span>
-                  </div>
+      <header>
+        <nav className="fixed top-0 left-0 right-0 z-50 glass-nav backdrop-blur-md bg-black/20 border-b border-cyan-500/20">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex justify-between items-center">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Siva Sai Ruthvik Goli</h1>
+              <div className="hidden md:flex space-x-8">
+                {['home', 'about', 'projects', 'contact'].map(section => (
+                  <button key={section} onClick={() => scrollToSection(section)} className={`nav-link ${activeSection === section ? 'active' : ''} capitalize transition-colors hover:text-cyan-400`}>
+                    {section}
+                  </button>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </nav>
+      </header>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20 relative" data-aos="fade-up">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title" data-aos="fade-right">Experience</h2>
-          <div ref={experienceScrollRef} className="flex overflow-x-auto space-x-6 scrollbar-hide py-4">
-            {experienceCards.map((exp, idx) => (
-              <div
-                key={idx}
-                className={`glass-card p-8 flex-shrink-0 ${experienceCards.length <= 2 ? 'flex-1 min-w-0' : 'min-w-[320px] max-w-xs'}`}
-              >
-                <h3 className="text-xl font-bold text-cyan-400 mb-2">{exp.title}</h3>
-                <p className="text-gray-400 mb-1">{exp.org}</p>
-                <p className="text-gray-400 mb-1">{exp.date}</p>
-                <ul className="list-disc ml-6 text-gray-300">
-                  {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                </ul>
+      <main>
+        {/* Hero Section */}
+        <section id="home" className="hero-section min-h-screen flex items-center justify-center relative overflow-hidden" data-aos="fade-up">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20"></div>
+          <div className="container mx-auto px-6 text-center relative z-10">
+            <div className="avatar-container mb-8">
+              <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 p-1 animate-pulse-glow flex items-center justify-center overflow-hidden">
+                <img
+                  src="/placeholder.svg"
+                  alt="Siva Sai Ruthvik Goli - Full Stack Developer"
+                  className="w-44 h-44 rounded-full object-cover"
+                />
               </div>
-            ))}
+            </div>
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in md:text-7xl" data-aos="fade-up">Siva Sai Ruthvik Goli</h1>
+            <h2 className="text-xl md:text-2xl text-gray-300 mb-2 animate-fade-in-delay" data-aos="fade-up" data-aos-delay="100">Full Stack Developer</h2>
+            <p className="text-lg text-gray-400 mb-2 animate-fade-in-delay" data-aos="fade-up" data-aos-delay="200">Guntur, Andhra Pradesh, India</p>
+            <p className="text-base text-gray-400 mb-8 animate-fade-in-delay" data-aos="fade-up" data-aos-delay="300">Aspiring Full Stack Developer with strong proficiency in React.js, Spring Boot, and SQL. Proven ability to design secure, scalable web applications and develop REST APIs. Experienced in UI/UX design, real‑time systems, and agile development environments. Seeking a paid internship to apply and expand technical skills in a fast‑paced, collaborative setting.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <button onClick={() => scrollToSection('projects')} className="cyber-button primary">
+                View My Work
+              </button>
+              <button onClick={() => scrollToSection('contact')} className="cyber-button secondary flex items-center gap-2">
+                <Mail size={20} />
+                Contact
+              </button>
+            </div>
+            <div className="animate-bounce">
+              <ChevronDown size={32} className="text-cyan-400 cursor-pointer mx-auto" onClick={() => scrollToSection('about')} />
+            </div>
           </div>
-        </div>
-      </section>
+          <div className="floating-particles">
+            {[...Array(20)].map((_, i) => <div key={i} className={`particle particle-${i + 1}`}></div>)}
+          </div>
+        </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 relative" data-aos="fade-up">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title" data-aos="fade-right">Featured Projects</h2>
-          <div ref={projectsScrollRef} className="flex overflow-x-auto space-x-6 scrollbar-hide py-4">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`project-card glass-card overflow-hidden group flex-shrink-0 ${projects.length <= 2 ? 'flex-1 min-w-0' : 'min-w-[320px] max-w-xs'}`}
-              >
-                <div className="project-image-container">
-                  <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform group-hover:scale-110" />
-                  <div className="project-overlay">
-                    <div className="flex gap-4">
-                      <a href={project.demo} className="project-link">
-                        <ExternalLink size={20} />
-                      </a>
+        {/* About Section */}
+        <section id="about" className="py-20 relative" data-aos="fade-up">
+          <div className="container mx-auto px-6">
+            <h2 className="section-title" data-aos="fade-right">About Siva Sai Ruthvik Goli</h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <article className="glass-card p-8">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-6" data-aos="fade-left">Professional Summary</h3>
+                <p className="text-gray-300 leading-relaxed mb-6" data-aos="fade-up">
+                  Aspiring Full Stack Developer with strong proficiency in React.js, Spring Boot, and SQL. Proven ability to design secure, scalable web applications and develop REST APIs. Experienced in UI/UX design, real‑time systems, and agile development environments. Seeking a paid internship to apply and expand technical skills in a fast‑paced, collaborative setting.
+                </p>
+                <h3 className="text-2xl font-bold text-cyan-400 mb-6 mt-8" data-aos="fade-left">Education</h3>
+                <ul className="text-gray-300 leading-relaxed list-disc ml-6">
+                  <li data-aos="fade-up" data-aos-delay="100"><strong>B.Tech, Computer Science & Engineering</strong><br/>Vignan's University, Guntur, Andhra Pradesh<br/>2023 – 2027</li>
+                  <li className="mt-2" data-aos="fade-up" data-aos-delay="200"><strong>Pre‑University Course (MPC)</strong><br/>RGUKT – IIIT Srikakulam, Andhra Pradesh<br/>2021 – 2023</li>
+                  <li className="mt-2" data-aos="fade-up" data-aos-delay="300"><strong>Secondary School Certificate</strong><br/>Santhinikethan School, Ananthasagaram<br/>2020 – 2021</li>
+                </ul>
+              </article>
+              <aside className="glass-card p-8">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-6" data-aos="fade-right">Core Skills</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {skills.map((skill, i) => (
+                    <div key={skill} className="skill-tag" data-aos="zoom-in" data-aos-delay={i * 50}>
+                      {skillIcons[skill] || <Zap className="text-purple-400" size={16} />}
+                      <span>{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience" className="py-20 relative" data-aos="fade-up">
+          <div className="container mx-auto px-6">
+            <h2 className="section-title" data-aos="fade-right">Professional Experience</h2>
+            <div ref={experienceScrollRef} className="flex overflow-x-auto space-x-6 scrollbar-hide py-4">
+              {experienceCards.map((exp, idx) => (
+                <article
+                  key={idx}
+                  className={`glass-card p-8 flex-shrink-0 ${experienceCards.length <= 2 ? 'flex-1 min-w-0' : 'min-w-[320px] max-w-xs'}`}
+                >
+                  <h3 className="text-xl font-bold text-cyan-400 mb-2">{exp.title}</h3>
+                  <p className="text-gray-400 mb-1">{exp.org}</p>
+                  <p className="text-gray-400 mb-1">{exp.date}</p>
+                  <ul className="list-disc ml-6 text-gray-300">
+                    {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-20 relative" data-aos="fade-up">
+          <div className="container mx-auto px-6">
+            <h2 className="section-title" data-aos="fade-right">Featured Projects by Siva Sai Ruthvik Goli</h2>
+            <div ref={projectsScrollRef} className="flex overflow-x-auto space-x-6 scrollbar-hide py-4">
+              {projects.map((project, index) => (
+                <article
+                  key={index}
+                  className={`project-card glass-card overflow-hidden group flex-shrink-0 ${projects.length <= 2 ? 'flex-1 min-w-0' : 'min-w-[320px] max-w-xs'}`}
+                >
+                  <div className="project-image-container">
+                    <img src={project.image} alt={`${project.title} - Project by Siva Sai Ruthvik Goli`} className="w-full h-48 object-cover transition-transform group-hover:scale-110" />
+                    <div className="project-overlay">
+                      <div className="flex gap-4">
+                        <a href={project.demo} className="project-link">
+                          <ExternalLink size={20} />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map(tech => <span key={tech} className="tech-tag">{tech}</span>)}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map(tech => <span key={tech} className="tech-tag">{tech}</span>)}
+                    </div>
                   </div>
-                </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 relative" data-aos="fade-up">
+          <div className="container mx-auto px-6">
+            <h2 className="section-title" data-aos="fade-right">Contact Siva Sai Ruthvik Goli</h2>
+            <div className="max-w-2xl mx-auto">
+              <div className="glass-card p-8">
+                <form onSubmit={handleSubmit} className="space-y-6" data-aos="fade-up">
+                  <div className="form-group">
+                    <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className={`cyber-input ${formErrors.name ? 'error' : ''}`} />
+                    {formErrors.name && <span className="error-text">{formErrors.name}</span>}
+                  </div>
+                  <div className="form-group">
+                    <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className={`cyber-input ${formErrors.email ? 'error' : ''}`} />
+                    {formErrors.email && <span className="error-text">{formErrors.email}</span>}
+                  </div>
+                  <div className="form-group">
+                    <textarea name="message" placeholder="Your Message" rows={5} value={formData.message} onChange={handleInputChange} className={`cyber-input ${formErrors.message ? 'error' : ''}`} />
+                    {formErrors.message && <span className="error-text">{formErrors.message}</span>}
+                  </div>
+                  <button type="submit" disabled={isSubmitting} className="cyber-button primary w-full flex items-center justify-center gap-2">
+                    {isSubmitting ? <div className="spinner"></div> : <>
+                        <Mail size={20} />
+                        Send Message
+                      </>}
+                  </button>
+                </form>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 relative" data-aos="fade-up">
-        <div className="container mx-auto px-6">
-          <h2 className="section-title" data-aos="fade-right">Get In Touch</h2>
-          <div className="max-w-2xl mx-auto">
-            <div className="glass-card p-8">
-              <form onSubmit={handleSubmit} className="space-y-6" data-aos="fade-up">
-                <div className="form-group">
-                  <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className={`cyber-input ${formErrors.name ? 'error' : ''}`} />
-                  {formErrors.name && <span className="error-text">{formErrors.name}</span>}
-                </div>
-                <div className="form-group">
-                  <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className={`cyber-input ${formErrors.email ? 'error' : ''}`} />
-                  {formErrors.email && <span className="error-text">{formErrors.email}</span>}
-                </div>
-                <div className="form-group">
-                  <textarea name="message" placeholder="Your Message" rows={5} value={formData.message} onChange={handleInputChange} className={`cyber-input ${formErrors.message ? 'error' : ''}`} />
-                  {formErrors.message && <span className="error-text">{formErrors.message}</span>}
-                </div>
-                <button type="submit" disabled={isSubmitting} className="cyber-button primary w-full flex items-center justify-center gap-2">
-                  {isSubmitting ? <div className="spinner"></div> : <>
-                      <Mail size={20} />
-                      Send Message
-                    </>}
-                </button>
-              </form>
-            </div>
+              {/* Social Links */}
+              <div className="flex justify-center gap-6 mt-12" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/sivasairuthvik" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile of Siva Sai Ruthvik Goli">
+                  <Github size={24} />
+                </a>
+                <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli-65a460240/" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile of Siva Sai Ruthvik Goli">
+                  <Linkedin size={24} />
+                </a>
+              </div>
 
-            {/* Social Links */}
-            <div className="flex justify-center gap-6 mt-12" data-aos="fade-up" data-aos-delay="200">
-              <a href="https://github.com/sivasairuthvik" className="social-link" target="_blank" rel="noopener noreferrer">
-                <Github size={24} />
-              </a>
-              <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli-65a460240/" className="social-link" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={24} />
-              </a>
-            </div>
-
-            <div className="text-center mt-8 text-gray-400" data-aos="fade-up" data-aos-delay="300">
-              <p>Email: <a href="mailto:231FA04F89@vignan.ac.in" className="text-cyan-400 underline">231FA04F89@vignan.ac.in</a></p>
-              <p>Phone: <a href="tel:+916304064551" className="text-cyan-400 underline">+91 63040 64551</a></p>
-              <p>Location: Guntur, Andhra Pradesh, India</p>
+              <div className="text-center mt-8 text-gray-400" data-aos="fade-up" data-aos-delay="300">
+                <p>Email: <a href="mailto:231FA04F89@vignan.ac.in" className="text-cyan-400 underline">231FA04F89@vignan.ac.in</a></p>
+                <p>Phone: <a href="tel:+916304064551" className="text-cyan-400 underline">+91 63040 64551</a></p>
+                <p>Location: Guntur, Andhra Pradesh, India</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 border-t border-cyan-500/20 text-center bg-transparent">
         <div className="container mx-auto px-6">
-          <p className="text-gray-400">© 2025 <a href="siva" className="text-cyan-400 underline hover:text-cyan-300" target="_blank" rel="noopener noreferrer">Siva Sai Ruthvik Goli</a>. All rights reserved</p>
+          <div className="flex justify-center gap-8 mb-4">
+            <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="LinkedIn Profile of Siva Sai Ruthvik Goli">
+              <Linkedin size={28} />
+            </a>
+            <a href="https://github.com/sivasairuthvik" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="GitHub Profile of Siva Sai Ruthvik Goli">
+              <Github size={28} />
+            </a>
+            <a href="https://www.instagram.com/ruthvikofficial" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="Instagram Profile of Siva Sai Ruthvik Goli">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+          <p className="text-gray-400">© 2025 <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli-65a460240/" className="text-cyan-400 underline hover:text-cyan-300" target="_blank" rel="noopener noreferrer">Siva Sai Ruthvik Goli</a>. All rights reserved</p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
 export default Index;
