@@ -46,6 +46,7 @@ const Index = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const experienceScrollRef = useDragScroll();
   const projectsScrollRef = useDragScroll();
+  const [result, setResult] = useState("");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -79,22 +80,34 @@ const Index = () => {
     if (!formData.message.trim()) errors.message = 'Message is required';
     return errors;
   };
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const errors = validateForm();
     setFormErrors(errors);
-    if (Object.keys(errors).length === 0) {
-      setIsSubmitting(true);
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      alert('Message sent successfully!');
+    if (Object.keys(errors).length !== 0) return;
+
+    setIsSubmitting(true);
+    setResult("Sending....");
+    const formDataObj = new FormData();
+    formDataObj.append("name", formData.name);
+    formDataObj.append("email", formData.email);
+    formDataObj.append("message", formData.message);
+    formDataObj.append("access_key", "e0023980-29fd-403e-af67-8cb7dcc442ee");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataObj
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setResult(data.message);
     }
+    setIsSubmitting(false);
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
@@ -351,7 +364,7 @@ const Index = () => {
             <h2 className="section-title" data-aos="fade-right">Contact Siva Sai Ruthvik Goli</h2>
             <div className="max-w-2xl mx-auto">
               <div className="glass-card p-8">
-                <form onSubmit={handleSubmit} className="space-y-6" data-aos="fade-up">
+                <form onSubmit={onSubmit} className="space-y-6" data-aos="fade-up">
                   <div className="form-group">
                     <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className={`cyber-input ${formErrors.name ? 'error' : ''}`} />
                     {formErrors.name && <span className="error-text">{formErrors.name}</span>}
@@ -370,6 +383,9 @@ const Index = () => {
                         Send Message
                       </>}
                   </button>
+                  {result && (
+                    <div className="text-center mt-4 text-cyan-400">{result}</div>
+                  )}
                 </form>
               </div>
 
