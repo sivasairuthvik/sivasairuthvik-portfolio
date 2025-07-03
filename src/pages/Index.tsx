@@ -43,8 +43,12 @@ const Index = () => {
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const experienceScrollRef = useDragScroll();
   const projectsScrollRef = useDragScroll();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'projects', 'contact'];
@@ -112,6 +116,7 @@ const Index = () => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: 'smooth'
     });
+    setIsMobileMenuOpen(false);
   };
   const projects = [
     {
@@ -175,6 +180,8 @@ const Index = () => {
           <div className="container mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
               <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Siva Sai Ruthvik Goli</h1>
+              
+              {/* Desktop Navigation */}
               <div className="hidden md:flex space-x-8">
                 {['home', 'about', 'projects', 'contact'].map(section => (
                   <button key={section} onClick={() => scrollToSection(section)} className={`nav-link ${activeSection === section ? 'active' : ''} capitalize transition-colors hover:text-cyan-400`}>
@@ -182,7 +189,35 @@ const Index = () => {
                   </button>
                 ))}
               </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden text-white hover:text-cyan-400 transition-colors relative w-6 h-6"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+              >
+                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
+                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`}></span>
+              </button>
             </div>
+
+            {/* Mobile Navigation Menu */}
+            {isMobileMenuOpen && (
+              <div className="md:hidden mt-4 pb-4 border-t border-cyan-500/20">
+                <div className="flex flex-col space-y-4 pt-4">
+                  {['home', 'about', 'projects', 'contact'].map(section => (
+                    <button
+                      key={section}
+                      onClick={() => scrollToSection(section)}
+                      className={`nav-link ${activeSection === section ? 'active' : ''} capitalize transition-colors hover:text-cyan-400 text-left py-2 px-4 rounded-lg hover:bg-cyan-500/10`}
+                    >
+                      {section}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </nav>
       </header>
