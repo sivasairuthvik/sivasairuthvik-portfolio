@@ -328,7 +328,7 @@ const Index = () => {
         {/* Projects Section */}
         <section id="projects" className="py-20 relative" data-aos="fade-up">
           <div className="container mx-auto px-6">
-            <h2 className="section-title" data-aos="fade-right">Featured Projects by Siva Sai Ruthvik Goli</h2>
+            <h2 className="section-title" data-aos="fade-right">Featured Projects </h2>
             <div ref={projectsScrollRef} className="flex overflow-x-auto space-x-6 scrollbar-hide py-4">
               {projects.map((project, index) => (
                 <article
@@ -361,7 +361,7 @@ const Index = () => {
         {/* Contact Section */}
         <section id="contact" className="py-20 relative" data-aos="fade-up">
           <div className="container mx-auto px-6">
-            <h2 className="section-title" data-aos="fade-right">Contact Siva Sai Ruthvik Goli</h2>
+            <h2 className="section-title" data-aos="fade-right">Contact Me</h2>
             <div className="max-w-2xl mx-auto">
               <div className="glass-card p-8">
                 <form onSubmit={onSubmit} className="space-y-6" data-aos="fade-up">
@@ -394,7 +394,7 @@ const Index = () => {
                 <a href="https://github.com/sivasairuthvik" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile of Siva Sai Ruthvik Goli">
                   <Github size={24} />
                 </a>
-                <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli-65a460240/" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile of Siva Sai Ruthvik Goli">
+                <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli/" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile of Siva Sai Ruthvik Goli">
                   <Linkedin size={24} />
                 </a>
               </div>
@@ -413,7 +413,7 @@ const Index = () => {
       <footer className="py-8 border-t border-cyan-500/20 text-center bg-transparent">
         <div className="container mx-auto px-6">
           <div className="flex justify-center gap-8 mb-4">
-            <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="LinkedIn Profile of Siva Sai Ruthvik Goli">
+            <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="LinkedIn Profile of Siva Sai Ruthvik Goli">
               <Linkedin size={28} />
             </a>
             <a href="https://github.com/sivasairuthvik" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" aria-label="GitHub Profile of Siva Sai Ruthvik Goli">
@@ -427,7 +427,7 @@ const Index = () => {
               </svg>
             </a>
           </div>
-          <p className="text-gray-400">© 2025 <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli-65a460240/" className="text-cyan-400 underline hover:text-cyan-300" target="_blank" rel="noopener noreferrer">Siva Sai Ruthvik Goli</a>. All rights reserved</p>
+          <p className="text-gray-400"> Copyright © 2025 <a href="https://www.linkedin.com/in/siva-sai-ruthvik-goli/" className="text-cyan-400 underline hover:text-cyan-300" target="_blank" rel="noopener noreferrer">Siva Sai Ruthvik Goli</a>. All rights reserved</p>
         </div>
       </footer>
     </div>
