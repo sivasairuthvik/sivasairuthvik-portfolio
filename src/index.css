@@ -501,6 +501,10 @@ body {
     margin: 3px 0 !important;
     border-radius: 2px;
   }
+  #projects .project-card {
+    min-width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -563,4 +567,12 @@ button, a, [role="button"], .cursor-pointer, input[type="button"], input[type="s
 button:hover, a:hover, [role="button"]:hover, .cursor-pointer:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover,
 button:active, a:active, [role="button"]:active, .cursor-pointer:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active {
   cursor: pointer !important;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    box-sizing: border-box;
+  }
 }
