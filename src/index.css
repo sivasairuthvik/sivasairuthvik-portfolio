@@ -31,6 +31,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: url('/screwdriver-cursor.png'), auto;
 }
 
 /* Glassmorphism Effects */
@@ -468,6 +469,37 @@ body {
     padding: 10px 24px;
     font-size: 0.875rem;
   }
+  .hero-section {
+    padding-top: 90px; /* Ensure content is not hidden behind fixed navbar */
+  }
+  .avatar-container .w-48,
+  .avatar-container .h-48 {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .avatar-container .w-44,
+  .avatar-container .h-44 {
+    width: 104px !important;
+    height: 104px !important;
+  }
+  .mobile-menu-button {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    z-index: 100;
+  }
+  .mobile-menu-button span {
+    width: 36px !important;
+    height: 4px !important;
+    margin: 3px 0 !important;
+    border-radius: 2px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -486,6 +518,19 @@ body {
   
   .cyber-input {
     padding: 12px 16px;
+  }
+  .hero-section {
+    padding-top: 80px;
+  }
+  .avatar-container .w-48,
+  .avatar-container .h-48 {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .avatar-container .w-44,
+  .avatar-container .h-44 {
+    width: 78px !important;
+    height: 78px !important;
   }
 }
 
@@ -511,4 +556,10 @@ body {
 ::selection {
   background: rgba(0, 255, 255, 0.3);
   color: white;
+}
+
+button, a, [role="button"], .cursor-pointer, input[type="button"], input[type="submit"], input[type="reset"],
+button:hover, a:hover, [role="button"]:hover, .cursor-pointer:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover,
+button:active, a:active, [role="button"]:active, .cursor-pointer:active, input[type="button"]:active, input[type="submit"]:active, input[type="reset"]:active {
+  cursor: pointer !important;
 }

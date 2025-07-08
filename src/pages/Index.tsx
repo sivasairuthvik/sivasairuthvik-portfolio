@@ -205,7 +205,7 @@ const Index = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden text-white hover:text-cyan-400 transition-colors relative w-6 h-6"
+                className="md:hidden mobile-menu-button text-white hover:text-cyan-400 transition-colors relative"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle mobile menu"
               >
