@@ -254,7 +254,7 @@ const Index = () => {
               <button onClick={() => scrollToSection('projects')} className="cyber-button primary">
                 View My Work
               </button>
-              <button onClick={() => scrollToSection('contact')} className="cyber-button secondary flex items-center gap-2">
+                <button onClick={() => scrollToSection('contact')} className="cyber-button secondary flex items-center gap-2">
                 <Mail size={20} />
                 Contact
               </button>
