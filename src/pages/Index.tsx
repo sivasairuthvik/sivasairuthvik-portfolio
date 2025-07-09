@@ -48,9 +48,6 @@ const Index = () => {
   const projectsScrollRef = useDragScroll();
   const [result, setResult] = useState("");
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'projects', 'contact'];
       const current = sections.find(section => {
